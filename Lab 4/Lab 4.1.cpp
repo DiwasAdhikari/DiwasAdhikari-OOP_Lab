@@ -1,7 +1,7 @@
 //Diwas Adhikari
 //076BEI014
 //Lab 4 - Task 1
-//Conversion from user-defined to basic type
+//Conversion from basic to user-defined type
 
 #include<iostream>
 using namespace std;
