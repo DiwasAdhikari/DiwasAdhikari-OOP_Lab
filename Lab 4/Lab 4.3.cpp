@@ -1,63 +1,71 @@
+//Diwas Adhikari
+//076BEI014
+//Lab 4 - Task 3
+//Conversion subroutine in source class
+
 #include<iostream>
 #include<cmath>
 #define PI 3.1415
 using namespace std;
-class polar
+class Polar
 {
      float r;
-     float theta;
+     float angle;
 public:
-    polar()
+    Polar()
     {
         r=0;
-        theta = 0;
+        angle = 0;
     }
-    polar(float a,float b)
+    Polar(float a,float b)
     {
         r = a;
-        theta = b;
+        angle = b;
     }
-    void showpolar()
+    void display()
     {
-        cout<<"The coordinates in polar form :"<<endl;
-        cout<<"r = "<<r<<" units"<<endl;
-        cout<<"theta = "<<theta<<" degrees"<<endl;
+        cout<<"The coordinates in polar form : "<<endl;
+        cout<<"r = "<< r <<endl;
+        cout<<"Angle = "<< angle <<" degrees"<<endl;
     }
 };
-class cartesian
+class Cartesian
 {
     float x;
     float y;
 public:
-    cartesian()
+    Cartesian()
     {
         x = 0;
         y = 0;
     }
-    cartesian(float p,float q)
+    Cartesian(float p,float q)
     {
         x = p;
         y = q;
     }
-    operator polar()
+    operator Polar()
     {
         float radius = sqrt(pow(x,2)+ pow(y,2)) ;
         float angle =  (atan(y/x))*(180/PI);
-        return polar(radius,angle);
+        return Polar(radius,angle);
     }
-    void getcartesia()
+    void input ()
     {
-        cout<<"Enter x and y"<<endl;
-        cin>>x>>y;
+        cout <<"Enter the co-ordinates -> "<<endl;
+        cout <<"X: " ;
+        cin >> x ;
+        cout <<"Y: " ;
+        cin >> y ;
     }
 
 };
 int main()
 {
-    polar p1;
-    cartesian c1;
-    c1.getcartesia();
-    p1 = c1;
-    p1.showpolar();
+    Polar p;
+    Cartesian c;
+    c.input();
+    p = c ;
+    p.display();
     return 0;
 }
