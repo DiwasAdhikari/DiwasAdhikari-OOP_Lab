@@ -47,7 +47,7 @@ public:
         r = sqrt(pow(c.getX(),2)+ pow(c.getY(),2)) ;
         angle =  (atan(c.getY()/c.getX()))*(180/PI);
     }
-    void showpolar()
+    void display()
     {
         cout<<"The polar coordinates are :"<<endl;
         cout<<"r = "<<r<<" units"<<endl;
