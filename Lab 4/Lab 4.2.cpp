@@ -1,35 +1,41 @@
+Diwas Adhikari
+//076BEI014
+//Lab 4 - Task 2
+//Conversion from user-defined to basic type
+
 #include<iostream>
 using namespace std;
-class dist
+class Distance
 {
     float feet;
     float inch;
 public:
-    dist()
+    Distance()
     {
         feet =0;
         inch  = 0;
     }
     operator float ()
     {
-        float m;
-        m = (feet*0.3048) + (inch*0.0254);
-        return m;
+        float metres;
+        metres = (feet*0.3048) + (inch*0.0254);
+        return metres;
     }
-    void getdist()
+    void input()
     {
-        cout<<"Enter the distance in feet and inch: "<<endl<<"feet:";
+        cout<<"Enter the distance in feet and inch: "<<endl ;
+        cout <<"FEET: ";
         cin>>feet;
-        cout<<"inch: ";
+        cout<<"INCH : ";
         cin>>inch;
     }
 };
 int main()
 {
-    dist d;
-    float m;
-    d.getdist();
-    m = d;
-    cout<<"The distance in meters is: "<<m<<" m"<<endl;
+    Distance d;
+    float metres;
+    d.input();
+    metres = d;
+    cout<<"The distance in meters is: "<< metres <<"m. "<<endl;
     return 0;
 }
