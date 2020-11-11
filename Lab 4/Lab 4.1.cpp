@@ -1,38 +1,41 @@
 #include<iostream>
 using namespace std;
-class dist
+
+class Distance
 {
     float feet;
     float inch;
     public:
-        dist()
+        Distance()
         {
             feet = 0;
             inch = 0;
         }
-        dist(float m)
+        Distance(float metres)
         {
-           inch = m*3.28*12;
+           inch = metres*3.28f*12.0f;
            if (inch >= 12)
            {
                int temp = int(inch/12);
-               feet = temp;
+               feet += temp;
                inch -= temp*12;
            }
         }
-        void showfeet()
+        void display()
         {
-            cout<<"The distance in feet and inch is "<<endl;
-            cout<<feet<<" feet and "<<inch<<"inches"<<endl;
+            cout<<"The distance is -> "<< endl;
+            cout<<"FEET : " << feet << endl ;
+            cout<<"INCH : " << inch << endl;
         }
 } ;
+
 int main()
 {
-    dist d;
-    float m;
-    cout<<"Enter the distance in meters"<<endl;
-    cin>>m;
-    d = m;
-    d.showfeet();
+    Distance d ;
+    float metres ;
+    cout<<"Enter the distance in metres -> "<<endl;
+    cin>>metres;
+    d = metres;
+    d.display();
     return 0;
 }
